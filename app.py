@@ -9,7 +9,7 @@ from zipper import zipper
 import re
 
 
-# magnet_link = str(input("Enter magnet link: "))
+magnet_link = str(input("Enter magnet link: "))
 
 # Gets the title of the download
 def get_title(magnet_link):
@@ -17,8 +17,8 @@ def get_title(magnet_link):
         return "Invalid magnet link try again"
     else:
         cmd= []
-        cmd.append("screen")
-        cmd.append("-dm")
+        #cmd.append("screen")
+        #cmd.append("-dm")
         cmd.append("webtorrent")
         cmd.append("info")
         cmd.append(magnet_link)
@@ -31,18 +31,19 @@ def get_title(magnet_link):
 
 
 def handler(magnet_link):
-    title = get_title(magnet_link)
+    dtitle = get_title(magnet_link)
     rPath = ranPath()
     done = False
 
     cmd=[]
-    cmd.append("screen")
-    cmd.append("-dm")
+    #cmd.append("screen")
+    #cmd.append("-dm")
     cmd.append("webtorrent")
     cmd.append(magnet_link)
     cmd.append("-o")
     cmd.append(rPath)
-    
+    #cmd.append(">>")
+    #cmd.append("/dev/null")
     try:
         if sys.platform.startswith('linux'):
             print("downloading...please wait")         
@@ -58,3 +59,4 @@ def handler(magnet_link):
 
     return f"{fPath}"
 
+print(handler(magnet_link))
