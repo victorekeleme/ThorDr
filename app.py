@@ -9,7 +9,7 @@ from zipper import zipper
 import re
 
 
-magnet_link = str(input("Enter magnet link: "))
+#magnet_link = str(input("Enter magnet link: "))
 
 # Gets the title of the download
 def get_title(magnet_link):
@@ -58,5 +58,3 @@ def handler(magnet_link):
     fPath = str(rPath+'/'+link) 
 
     return f"{fPath}"
-
-print(handler(magnet_link))
