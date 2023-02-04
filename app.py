@@ -39,6 +39,8 @@ def handler(magnet_link):
     #cmd.append("screen")
     #cmd.append("-dm")
     cmd.append("webtorrent")
+    cmd.append("--quiet")
+    cmd.append("true")
     cmd.append(magnet_link)
     cmd.append("-o")
     cmd.append(rPath)
