@@ -9,8 +9,6 @@ from zipper import zipper
 import re
 
 
-#magnet_link = str(input("Enter magnet link: "))
-
 # Gets the title of the download
 def get_title(magnet_link):
     if str(magnet_link)[:15] != "magnet:?xt=urn:":
@@ -36,8 +34,6 @@ def handler(magnet_link):
     done = False
 
     cmd=[]
-    #cmd.append("screen")
-    #cmd.append("-dm")
     cmd.append("webtorrent")
     cmd.append("--quiet")
     cmd.append("true")
